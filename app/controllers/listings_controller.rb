@@ -5,6 +5,10 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     @listings = Listing.all
+
+    @listings_australia = Listing.where(country_code: 'au')
+    @listings_new_zealand = Listing.where(country_code: 'nz')
+    @listings_philippines = Listing.where(country_code: 'ph')
   end
 
   # GET /listings/1

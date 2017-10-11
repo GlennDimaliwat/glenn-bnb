@@ -1,6 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listings</h1>
+<h2>All Listings</h2>
+<div class="d-flex flex-row">
+  <%= render @listings %>
+</div>
+
+<h2>All Listings in Australia</h2>
+<div class="d-flex flex-row">
+  <%= render @listings_australia %>
+</div>
+
+<h2>All Listings in New Zealand</h2>
+<div class="d-flex flex-row">    
+  <%= render @listings_new_zealand %>
+</div>
+
+<h2>All Listings in Philippines</h2>
+<div class="d-flex flex-row">        
+  <%= render @listings_philippines %>
+</div>
 
 <table>
   <thead>

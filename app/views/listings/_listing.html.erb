@@ -1,0 +1,24 @@
+<div class="p-2">
+    <div class="card" style="width: 20rem;">
+    <%= image_tag(listing.photo.url, class: "card-img-top") unless listing.photo.nil? %>
+    <div class="card-block">
+        <h4 class="card-title"><%= listing.title %></h4>
+        <p class="card-text">
+            <em><%= listing.full_address %></em><br>
+            <strong>Night fee cents:</strong> <%= listing.night_fee %><br>
+            <strong>Cleaning fee cents:</strong> <%= listing.cleaning_fee %><br>
+            <strong>Bed count:</strong> <%= listing.bed_count %><br>
+            <strong>Bedroom count:</strong> <%= listing.bedroom_count %><br>
+            <strong>Bathroom count:</strong> <%= listing.bathroom_count %><br>
+            <strong>Description:</strong> <%= listing.description %><br>
+        </p>
+        <details>
+            <summary>Location Map</summary>
+            <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{listing.latitude},#{listing.longitude}&markers=#{listing.latitude},#{listing.longitude}&zoom=7&size=640x400&key=AIzaSyANplAQLg6vAm2SsrwHGpZyfQe1zNS1dQs", class: "card-img-top" %>
+        </details>
+        <br>
+        <%= link_to 'Show', listing_path(listing), class:"btn btn-primary" %>
+    </div>
+    </div>
+    <br>
+</div>
