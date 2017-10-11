@@ -61,6 +61,11 @@
     <%= form.number_field :cleaning_fee_cents, id: :listing_cleaning_fee_cents %>
   </div>
 
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

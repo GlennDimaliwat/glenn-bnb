@@ -31,6 +31,12 @@
 </p>
 
 <p>
+  <div>
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@listing.latitude},#{@listing.longitude}&markers=#{@listing.latitude},#{@listing.longitude}&zoom=7&size=640x400&key=AIzaSyANplAQLg6vAm2SsrwHGpZyfQe1zNS1dQs" %>
+  </div>
+</p>
+
+<p>
   <strong>Bed count:</strong>
   <%= @listing.bed_count %>
 </p>
@@ -58,6 +64,10 @@
 <p>
   <strong>Cleaning fee cents:</strong>
   <%= @listing.cleaning_fee %>
+</p>
+
+<p>
+    <%= image_tag @listing.photo.url unless @listing.photo.nil? %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |

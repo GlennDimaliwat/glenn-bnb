@@ -45,6 +45,12 @@ gem 'geocoder'
 # Money
 gem 'money'
 
+# Shrine
+gem 'shrine'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'fastimage'
+
 group :development, :test do
   # Annotate
   gem 'annotate'

@@ -16,13 +16,20 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  host_id            :integer
+#  latitude           :decimal(10, 6)
+#  longitude          :decimal(10, 6)
 #
+
 require 'money'
 
 class Listing < ApplicationRecord
+    include ImageUploader::Attachment.new(:photo)
+    
     geocoded_by :full_address
     after_validation :geocode
-
+    has_many :photos
+    accepts_nested_attributes_for :photos
+    
     def country
         ISO3166::Country.new(country_code.upcase)
     end
