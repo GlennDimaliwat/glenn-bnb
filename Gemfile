@@ -42,6 +42,9 @@ gem 'countries'
 # Geocoder
 gem 'geocoder'
 
+# Money
+gem 'money'
+
 group :development, :test do
   # Annotate
   gem 'annotate'

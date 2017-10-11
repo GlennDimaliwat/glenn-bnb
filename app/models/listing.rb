@@ -17,11 +17,12 @@
 #  updated_at         :datetime         not null
 #  host_id            :integer
 #
+require 'money'
 
 class Listing < ApplicationRecord
     geocoded_by :full_address
     after_validation :geocode
-    
+
     def country
         ISO3166::Country.new(country_code.upcase)
     end
@@ -29,5 +30,13 @@ class Listing < ApplicationRecord
     def full_address
         # [street_address, city, country.name].join(', ')
         "#{street_address}, #{city}, #{country.name}"
+    end
+
+    def night_fee
+        Money.new(night_fee_cents, "AUD").format
+    end
+
+    def cleaning_fee
+        Money.new(cleaning_fee_cents, "AUD").format
     end
 end
