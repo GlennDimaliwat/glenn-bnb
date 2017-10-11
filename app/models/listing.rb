@@ -20,7 +20,7 @@
 #  longitude          :decimal(10, 6)
 #
 
-require 'money'
+# require 'money'
 
 class Listing < ApplicationRecord
     include ImageUploader::Attachment.new(:photo)

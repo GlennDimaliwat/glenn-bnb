@@ -63,6 +63,7 @@
 
   <div class="field">
     <%= form.label :photo %>
+    <%= form.hidden_field :photo, value: listing.cached_photo_data %>
     <%= form.file_field :photo %>
   </div>
 
