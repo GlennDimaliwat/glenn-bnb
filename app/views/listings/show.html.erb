@@ -16,8 +16,18 @@
 </p>
 
 <p>
-  <strong>Country code:</strong>
-  <%= @listing.country_code %>
+  <strong>Country:</strong>
+  <%= @listing.country.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @listing.full_address %>
+</p>
+
+<p>
+  <strong>Coords:</strong>
+  <%= @listing.latitude %>, <%= @listing.longitude %>
 </p>
 
 <p>
