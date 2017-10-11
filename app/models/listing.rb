@@ -25,25 +25,29 @@
 class Listing < ApplicationRecord
     include ImageUploader::Attachment.new(:photo)
     
+    validates :title, presence: true
+    validates :street_address, presence: true
+    validates :city, presence: true
+    validates :country_code, presence: true
+    validates :country, presence: {  # Validates country method in this model
+        message: -> (listing, data) {"No country for code : #{listing.country_code}" }
+    }
+    validates :bed_count, numericality: { greater_than: 0 }
+    
+    validates :country_code, presence: true
+
     geocoded_by :full_address
     after_validation :geocode
     has_many :photos
-    accepts_nested_attributes_for :photos
+    # accepts_nested_attributes_for :photos
     
     def country
         ISO3166::Country.new(country_code.upcase)
     end
 
     def full_address
-        # [street_address, city, country.name].join(', ')
+        return nil if country.nil?
         "#{street_address}, #{city}, #{country.name}"
     end
-
-    # def night_fee
-    #     Money.new(night_fee_cents, "AUD").format
-    # end
-
-    # def cleaning_fee
-    #     Money.new(cleaning_fee_cents, "AUD").format
-    # end
+    
 end
