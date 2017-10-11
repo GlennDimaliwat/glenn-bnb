@@ -51,6 +51,9 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'fastimage'
 
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0.beta'
+
 group :development, :test do
   # Annotate
   gem 'annotate'
