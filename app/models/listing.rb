@@ -39,11 +39,11 @@ class Listing < ApplicationRecord
         "#{street_address}, #{city}, #{country.name}"
     end
 
-    def night_fee
-        Money.new(night_fee_cents, "AUD").format
-    end
+    # def night_fee
+    #     Money.new(night_fee_cents, "AUD").format
+    # end
 
-    def cleaning_fee
-        Money.new(cleaning_fee_cents, "AUD").format
-    end
+    # def cleaning_fee
+    #     Money.new(cleaning_fee_cents, "AUD").format
+    # end
 end
