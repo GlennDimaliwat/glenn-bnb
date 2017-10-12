@@ -1,7 +1,7 @@
 <div class="p-2">
     <div class="card" style="width: 20rem;">
         <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{listing.latitude},#{listing.longitude}&markers=#{listing.latitude},#{listing.longitude}&zoom=7&size=640x400&key=AIzaSyANplAQLg6vAm2SsrwHGpZyfQe1zNS1dQs", class: "card-img-top" %>
-        <div class="card-block">
+        <div class="card-block card-body">
             <h4 class="card-title"><%= listing.title %></h4>
             <p class="card-text">
                 <em><%= listing.full_address %></em><br>
