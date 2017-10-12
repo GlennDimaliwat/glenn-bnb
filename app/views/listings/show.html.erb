@@ -39,12 +39,12 @@
 
 <p>
   <strong>Night fee:</strong>
-  <%= format_money(@listing.night_fee_cents) %>
+  <%= format_money_for_country(@listing.night_fee_cents, @listing.country) %>
 </p>
 
 <p>
   <strong>Cleaning fee:</strong>
-  <%= format_money(@listing.cleaning_fee_cents) %>
+  <%= format_money_for_country(@listing.cleaning_fee_cents, @listing.country) %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
