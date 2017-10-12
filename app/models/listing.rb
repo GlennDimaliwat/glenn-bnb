@@ -41,6 +41,9 @@ class Listing < ApplicationRecord
     has_many :photos
     # accepts_nested_attributes_for :photos
     
+    has_many :conversations, dependent: :destroy
+
+
     def country
         ISO3166::Country.new(country_code.upcase)
     end
