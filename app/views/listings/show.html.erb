@@ -47,6 +47,6 @@
   <%= format_money_for_country(@listing.cleaning_fee_cents, @listing.country) %>
 </p>
 
-<%= link_to 'Message me!', listing_conversations_path(listing_id: @listing.id, sender_id: current_user.id, recipient_id: @listing.host_id), method: 'post' %>
+<%= link_to 'Message me', listing_conversations_path(listing_id: @listing.id, sender_id: current_user.id, recipient_id: @listing.host_id), method: 'post' %> |
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

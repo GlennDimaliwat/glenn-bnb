@@ -9,9 +9,8 @@ class ConversationsController < ApplicationController
   def create
     @listing = Listing.find(params[:listing_id])
 
-    if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-      @conversation = Conversation.between(params[:sender_id],
-      params[:recipient_id]).first
+    if Conversation.between(params[:sender_id],params[:recipient_id], params[:listing_id]).present?
+      @conversation = Conversation.between(params[:sender_id], params[:recipient_id], params[:listing_id]).first
     else
       @conversation = Conversation.create!(conversation_params)
     end
