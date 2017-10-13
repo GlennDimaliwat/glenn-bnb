@@ -13,14 +13,14 @@ class ConversationsController < ApplicationController
 
     if params[:sender_id]!=params[:recipient_id] # Sender and Receiver should not be the same
       
-      if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-        @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
+      if Conversation.between(params[:sender_id],params[:recipient_id], params[:listing_id]).present?
+        @conversation = Conversation.between(params[:sender_id], params[:recipient_id], params[:listing_id]).first
       else
         @conversation = Conversation.create!(conversation_params)
       end
 
       redirect_to listing_conversation_messages_path(@listing, @conversation)
-      
+
     else
       respond_to do |format|
         format.html { redirect_to listing_path(@listing), notice: 'You cannot send a message to yourself.' }
