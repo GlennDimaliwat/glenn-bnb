@@ -18,6 +18,7 @@
 #  host_id            :integer
 #  latitude           :decimal(10, 6)
 #  longitude          :decimal(10, 6)
+#  photo_data         :string
 #
 
 # require 'money'
