@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Dot Env
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -53,6 +55,9 @@ gem 'fastimage'
 
 # Bootstrap
 gem 'bootstrap', '~> 4.0.0.beta'
+
+# Mailgun
+gem 'mailgun-ruby', '~>1.1.6'
 
 group :development, :test do
   # Annotate

@@ -4,7 +4,9 @@ class ConversationsController < ApplicationController
   def index
     @users = User.all
     @conversations = Conversation.all
-    @listing = Listing.find(params[:listing_id])
+    unless params[:listing_id]=="all"
+      @listing = Listing.find(params[:listing_id])
+    end
   end
 
   def create

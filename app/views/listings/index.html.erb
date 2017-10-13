@@ -5,6 +5,8 @@
 <% else %>
 <%= link_to('Login', new_user_session_path, class: 'btn btn-danger') %>
 <% end %>
+<%= link_to('Inbox', inbox_path(listing_id:'all'), class:'btn btn-danger') %>
+<%= link_to('Contact Support', support_path, class: 'btn btn-danger') %>
 <h2>All Listings</h2>
 <div class="d-flex flex-wrap">
   <%= render @listings %>

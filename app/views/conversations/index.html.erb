@@ -10,14 +10,14 @@
                     <% recipient = User.find(conversation.sender_id) %>
                 <% end %>
                 <% listing = Listing.find(conversation.listing_id) %>
-                <%= link_to "#{listing.title} conversation with #{recipient.email}", listing_conversation_messages_path(@listing, conversation), class: 'btn btn-danger' %><br><br>
+                <%= link_to "#{listing.title} conversation with #{recipient.email}", listing_conversation_messages_path(conversation.listing_id, conversation), class: 'btn btn-danger' %><br><br>
             <% end %>
         <% end %>
         </div>
     </div>
 </div>
 
-<%= link_to "Back", :back, class: 'btn btn-danger' %>
+<%= link_to "Back", listings_path, class: 'btn btn-danger' %>
 
 <!-- <div class="ui segment"> -->
         <!-- <h3>All Users</h3> -->
