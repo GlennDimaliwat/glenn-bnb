@@ -26,6 +26,8 @@
 class Listing < ApplicationRecord
     include ImageUploader::Attachment.new(:photo)
     
+    belongs_to :host, :foreign_key => :host_id, class_name: "User"
+    
     validates :title, presence: true
     validates :street_address, presence: true
     validates :city, presence: true

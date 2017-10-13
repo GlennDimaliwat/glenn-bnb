@@ -1,3 +1,5 @@
+<h3>Messaging <%= @listing.host.email %> regarding <%= @listing.title %></h3>
+
 <% if @over_ten %>
 <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
@@ -25,6 +27,6 @@
 </div>
 <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
 <div>
-<%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+<br><%= f.submit "Add Reply", class: "btn btn-danger" %> <%= link_to "Back", listing_path(@listing), class: 'btn btn-danger' %>
 </div>
 <% end %>
