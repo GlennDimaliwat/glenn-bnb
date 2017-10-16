@@ -9,11 +9,13 @@ Rails.application.routes.draw do
       resources :messages
     end
   end
+  get '/inbox' => 'conversations#index'
 
   get '/support' => 'support#new'
   post '/support' => 'support#create'
-
-  get '/inbox' => 'conversations#index'
   
+  get '/bookings/new' => 'bookings#new', as: 'new_booking'
+  post '/bookings' => 'bookings#create'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

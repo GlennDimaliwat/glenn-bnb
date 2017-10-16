@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    # @conversation = Conversation.new
+    # @new_booking = Booking.new(check_in_at: Date.today, listing_id: @listing.id)
   end
 
   # GET /listings/new

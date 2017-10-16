@@ -1,0 +1,27 @@
+<h1>New Booking</h1>
+<%= form_with(model: @booking, local: true) do |f| %>
+    <%= f.text_field :listing_id %>
+    <!-- <%= f.text_field :guest_id, value: current_user.id %> -->
+
+    <% @booking.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+    <% end %>
+
+    <div>
+        <%= f.label :check_in_at, 'Check in' %><br>
+        <%= f.date_field :check_in_at %>
+    </div>
+
+    <div>
+        <%= f.label :check_out_at, 'Check out' %><br>
+        <%= f.date_field :check_out_at %>
+    </div>
+
+    <div>
+        <%= f.label :guest_count %><br>
+        <%= f.number_field :guest_count %>
+    </div>
+
+    <br>
+    <%= f.button 'Book', class: 'btn btn-danger' %>
+<% end %>
